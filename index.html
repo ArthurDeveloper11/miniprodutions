@@ -1,0 +1,19 @@
+<script>
+async function getMembers() {
+    const groupId = 123456;
+
+    const response = await fetch(
+        `https://groups.roblox.com/v1/groups/${groupId}/users?limit=100&sortOrder=Asc`
+    );
+
+    const data = await response.json();
+
+    console.log(data);
+
+    for (const member of data.data) {
+        console.log(member.user.username);
+    }
+}
+
+getMembers();
+</script>
