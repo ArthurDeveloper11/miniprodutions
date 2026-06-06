@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Callback Roblox</title>
+</head>
+<body>
+  <h1>Callback</h1>
+  <div id="result"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+
+    if (code) {
+      document.getElementById("result").innerText = "Authorization code: " + code;
+    } else {
+      document.getElementById("result").innerText = "Nenhum código recebido.";
+    }
+  </script>
+</body>
+</html>
